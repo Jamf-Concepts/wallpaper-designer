@@ -1,4 +1,4 @@
-# The Wallpaper app for Jamf Pro
+# Wallpaper Designer for Jamf Pro
 
 ## Introduction
 
@@ -93,7 +93,7 @@ The dynamic text area can be formatted using the formatting dropdown…
 
 ![Font Menu](./images/fontMenu.png "Font Menu")
 
-The following variables are supported within the text field. These will be replaced with the actual values from the device's inventory record in Jamf Pro as Wallpaper is composing the composited image. 
+The following variables are supported within the text field. These will be replaced with the actual values from each device's  Jamf Pro inventory record  as Wallpaper is composing its wallpaper image. 
 
 - $devicename
 - $serialnumber
@@ -121,4 +121,4 @@ Use the Scope button select the device(s) you wish to target. If you select *Gro
 **The "Set Background" button:** 
 The app will send your request to Jamf Pro when you click this button. A dialog summarizing the operation will appear once the app finishes communicating with Jamf Pro. 
 
-Information about the process can be viewed in the app log, available by typing command + L or from the menu bar, View --> Logs Folder.
+Information about the process can be viewed in the app log, available by typing command + L, or from the menu bar, View → Logs Folder.
