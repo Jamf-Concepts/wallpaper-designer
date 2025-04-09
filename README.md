@@ -2,16 +2,14 @@
 
 ## Introduction
 
-The Wallpaper app helps you set customized background images on the iOS and iPadOS devices you manage with Jamf Pro. You can overlay custom text and/or a QR Code for each device. 
+Wallpaper Designer is a macOS app helps you set customized background images on the iOS and iPadOS devices you manage with Jamf Pro. You can overlay custom text and/or a QR Code for each device. 
+
+The Wallpaper application is available for download [here](https://github.com/Jamf-Concepts/wallpaper/releases/latest/download/Wallpaper.zip).
 
 ![](images/main-screen.png)
 
-The Wallpaper application is supplied in a zip file available [here](https://github.com/Jamf-Concepts/wallpaper/releases/latest/download/Wallpaper.zip).
-  
 
 ## Background
-
-(no pun intended...)
 
 Jamf Pro includes a feature to set a background image (or "wallpaper") for the Lock Screen and/or Home Screen of managed phones and iPads. 
 
@@ -20,31 +18,31 @@ The Set Wallpaper command is available for devices meeting these requirements:
 * iOS 8 and above (Supervised)
 * iPadOS 13.1 and above (Supervised)
 
-Different organizations use this feature in different ways, or not at all. For example, many device administrators prefer to let users with individually-assigned devices set them up with whatever look and feel the user enjoys. Others (especially those with shared-use/cart devices in education, retail, or industry settings), will heavily customize things like background images and Home Screen icon arrangement so all devices have a the same setup. That way anyone can pick up any device and have a consistent experience. 
+Different organizations use this feature in different ways, or not at all. For example, many device administrators prefer to leave the choice of wallpapers to their users with individually-assigned devices. Others (especially those with shared-use/cart devices in education, retail, or industry settings), will heavily customize things like background images and Home Screen icon arrangement so all devices have the same setup. That way their users have a consistent experience on any device. 
 
-In Jamf Pro, Wallpaper deployment is typically accomplished using the "Action" button available on the mobile device inventory or Advanced Search device listing screens. 
+In Jamf Pro, Wallpaper may be deployed to a series of devices using the "Action" button available on device listing screens like inventory list, advanced search, or when viewing group membership. A tutorial video is available from [Lesson 15: Advanced Searches and Actions | Jamf 100 Course](https://www.youtube.com/watch?v=ZNJxGaf0s5k). 
 
-The process can also be automated in a Mobile Device Smart Group's "Automated Management" tab. 
+Wallpaper deployment can also be configured in a Mobile Device Smart Group's "Automated Management" tab. 
 
 ![](images/smart-group-wallpaper.png)
 
-Smart groups allow a lot of flexibility for determining which devices get which image. For example, you could set a special lock-screen image to quickly see which devices have a special set of restrictions when they've been switched to test-taking mode. The set-wallpaper command will be issued any time a device falls into the smart group. In addition, the desired wallpaper will be automatically applied if the device is reset. 
+Smart groups allow a lot of flexibility for determining which devices get which image. For example, you could set a special lock-screen image to quickly see which devices have a special set of restrictions when they've been switched to test-taking mode. The set-wallpaper command will be issued any time a device falls into the smart group. The Smart Group automation method also allows you to automatically re-install your desired wallpaper automatically if the device is reset and re-enrolled in Jamf Pro. 
 
 These capabilities will satisfy most needs, but they won't be of much help if you have 1,000 iPads and you want the device's serial number to appear on the Lock Screen of every device. The Wallpaper app will save you the trouble of making 1,000 image files and deploying them by hand. 
 
 ## Notices
 
-Please be aware that wallpaper images are stored in Jamf Pro's database. We've seen customers set wallpaper on many thousands of devices without issue, but you should take care not to send out wallpaper to too many devices at once. Avoid constantly re-issuing new wallpaper designs, and don't send images with resolutions that far exceed what a device can actually display. 
+Please be aware that wallpaper images are stored in Jamf Pro's database. We've seen customers set wallpaper on many thousands of devices, but you should take care not to send out wallpaper to too many devices at once. Avoid constantly re-issuing new wallpaper designs, and don't send images with resolutions that far exceed what a device can actually display. 
 
-Test your setting on a variety of test devices and do your rollouts in phases. Image processing for a large fleet will take some time and deploying the images will consume server resources. 
+Test your setting on a variety of test devices and do your rollouts in phases. Image processing for a large fleet will take some time. Deploying the images will consume server resources. 
 
-Wallpaper is offered as a [Jamf Concept](https://concepts.jamf.com/child_pages/about.html) app and is licensed under the terms of the [Concepts Use Agreement](https://resources.jamf.com/documents/jamf-concept-projects-use-agreement.pdf). If you have feedback, please feel free to open a discussion or [file an issue](https://github.com/Jamf-Concepts/wallpaper-designer/issues). 
+Wallpaper is offered as a [Jamf Concept](https://concepts.jamf.com/child_pages/about.html) app and is licensed under the terms of the [Concepts Use Agreement](https://resources.jamf.com/documents/jamf-concept-projects-use-agreement.pdf). If you have feedback, please feel free to open a discussion or [file an issue](https://github.com/Jamf-Concepts/wallpaper-designer/issues) in the project's GitHub repository. 
 
 ## Setup
 
 ### Permissions
 
-Check that the user you'll use to login to the Wallpaper app has at least these permissions:
+The Wallpaper Designer app requires a login for Jamf Pro. Check that your user has at least these permissions: 
 
 | Section                  | Permissions                           |
 |--------------------------|---------------------------------------|
@@ -53,14 +51,14 @@ Check that the user you'll use to login to the Wallpaper app has at least these 
 
 ### Optional – Noting wallpaper deployment in an extension attribute
 
-To help keep track which devices have had a wallpaper deployed (and which haven't), you can create a mobile device extension attribute. If the attribute exists, Wallpaper will write the current date there any time it deploys a wallpaper to the device. 
+To help keep track which devices have a wallpaper deployed via the app, you can create a mobile device extension attribute. If the attribute exists, Wallpaper will write the current date there any time it deploys a wallpaper to the device. 
 
 Go to Settings --> Device Management --> Extension Attributes, then click New and apply the following settings:
 
-- **Display Name:** Wallpaper Applied
-- **Data Type:** Date (YYYY-MM-DD hh:mm:ss)
-- **Inventory Display:** Select whichever is you preference
-- **Input Type:** Text Field
+- **Display Name:** "Wallpaper Applied"
+- **Data Type:** "Date (YYYY-MM-DD hh:mm:ss)"
+- **Inventory Display:** Select whichever page you prefer
+- **Input Type:** "Text Field"
 
 
 ## Startup
@@ -80,12 +78,12 @@ To the right of the preview, there are some options for setting overlay content,
 
 | Image sizing notes: |
 |---------------------|
-| When using a custom image file, the best resolution will depend on the display resolution of your target devices and your image's level of visual detail. iOS devices will automatically size/crop the image to achieve a good fit, maintaining aspect ratio. Use the smallest image size that achieves acceptable appearance to improve performance. Information about device aspect ratios and resolutions is available from sites like [ios-resolution.com](https://www.ios-resolution.com). Wallpaper image rotate with the device on iPad so you may need to add some border to make your image closer to a square if it contains content near its edges that you don't want to rotate off screen. |
+| When using a custom image file, the best resolution will depend on the display resolution of your target devices and your image's level of visual detail. iOS devices will automatically size/crop your image to achieve a good fit, maintaining aspect ratio. Use the smallest image size that achieves acceptable appearance to improve performance. Information about device resolutions is available from sites like [ios-resolution.com](https://www.ios-resolution.com). Wallpaper images rotate with the device on iPad so you may need to add some border to make your image closer to a square if it contains important content near its edges that you don't want to rotate off-screen. |
 
 
 ## Overlay Content Options
 
-You may add text and/or a QR code to the wallpaper and then position them by moving them in the preview area. 
+You may add text and/or a QR code to the wallpaper and then position them on the screen by moving them within the preview area. 
 
 At present, the QR code will only contain the serial number of the device and can't be customized. 
 
@@ -101,6 +99,9 @@ The following variables are supported within the text field. These will be repla
 - $asset_tag
 - $buildingname
 - $departmentname
+
+In Jamf Pro, device name, serial number, and often site are populated automatically when a device enrolls. You can populate other values individually in device records, via mass action, or by uploading spreadsheets via [Inventory Preload](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Inventory_Preload.html) or the [MUT utility](https://marketplace.jamf.com/details/the-mut). 
+
 
 ## Deploying the Wallpaper
 
@@ -122,3 +123,11 @@ Use the Scope button select the device(s) you wish to target. If you select *Gro
 The app will send your request to Jamf Pro when you click this button. A dialog summarizing the operation will appear once the app finishes communicating with Jamf Pro. 
 
 Information about the process can be viewed in the app log, available by typing command + L, or from the menu bar, View → Logs Folder.
+
+## Locking the Wallpaper Down
+
+Once a wallpaper is deployed, users can still go into Settings on the device and change it to something else. Some organizations don't mind that. They want to have their wallpaper installed when the device is enrolled, but are happy to let users change it if they want. In other cases, the wallpaper setting needs to be locked in place. 
+
+To do so, add the Modifying Wallpaper restriction to the restrictions payload in a new or existing configuration profile. 
+
+![Restrictions Profile](./images/wall-paper-lock-profile.png "Select")
