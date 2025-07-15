@@ -144,8 +144,6 @@ Information about the process can be viewed in the app log, available by typing 
 
 ## Locking the Wallpaper Down
 
-Once a wallpaper is deployed, users can still go into Settings on the device and change it to something else. Some organizations don't mind that. They want to have their wallpaper installed when the device is enrolled, but are happy to let users change it if they want. In other cases, the wallpaper setting needs to be locked in place. 
-
-To do so, add the Modifying Wallpaper restriction to the restrictions payload in a new or existing configuration profile. 
+Once a wallpaper is deployed, users can still go into Settings on the device and change it to something else. Some organizations don't mind that. They want to have their wallpaper installed when the device is enrolled, but are happy to let users change it if they want. In other cases, the wallpaper setting needs to be locked in place. To do so, add the "Modifying Wallpaper" restriction to the restrictions payload in a configuration profile. 
 
 ![Restrictions Profile](./images/wall-paper-lock-profile.png "Select")
