@@ -18,7 +18,7 @@ The Set Wallpaper command is available for devices meeting these requirements:
 * iOS 8 and above (Supervised)
 * iPadOS 13.1 and above (Supervised)
 
-Different organizations use this feature in different ways, or not at all. For example, for individually-assigned devices, many administrators prefer to let the users control their own wallpaper. Others (especially those with shared-use/cart devices in education, retail, or industry settings), will heavily customize things like background images and Home Screen icon arrangement so all devices have the same setup. That way their users have a consistent experience on any device. 
+Different organizations use this feature in different ways, or not at all. For example, for individually-assigned devices, many administrators prefer to let the users control their own wallpaper. Others -- especially those with shared-use/cart devices in education, retail, or industry settings -- will heavily customize things like background images and home screen icon arrangement so all devices have the same setup. That way their users have a consistent experience on any device. 
 
 In Jamf Pro, Wallpaper may be deployed to a series of devices using the "Action" button available on device listing screens like inventory list, advanced search, or when viewing group membership. A tutorial video is available from [Lesson 15: Advanced Searches and Actions | Jamf 100 Course](https://www.youtube.com/watch?v=ZNJxGaf0s5k). 
 
@@ -37,9 +37,7 @@ These capabilities will satisfy most needs, but they won't be of much help if yo
 
 ### Limitations
 
-You should be aware that wallpaper images are stored in Jamf Pro's database. We've seen customers set wallpaper on many thousands of devices, but you should take care not to send out wallpaper to too many devices at once. Avoid constantly re-issuing new wallpaper designs, and don't send images with resolutions that far exceed what a device can actually display. 
-
-Test your setting on a variety of test devices and do your rollouts in phases. Image processing for a  fleet will take some time and deploying the images will consume server resources. If you have many thousands of devices, talk to us about solutions that will make better sense in your environment. The Wallpaper app is also not a solution if you have a workflow that resets devices between users. We have solutions for setting the wallpaper in that situation as well. 
+You should be aware that wallpaper images are stored in Jamf Pro's database. We've seen customers set wallpaper on many thousands of devices without issue, but don't start off by sending out a customized wallpaper to 100,000 devices at once. It would better to start with a test group, evaluate results, then ramp up from there. You can minimize database size by sending images with a resolution that gives a nice result but doesn't far exceded what the device can actually display. Image processing for a large fleet will take some time and deploying the images will consume server resources. If you have many thousands of devices, talk to us about solutions that will make better sense in your environment. The Wallpaper app is also not a solution if you have a workflow that resets devices between users as wallpapers set by this utility won't automatically come back. Smart group actions and our solutions for setting dynamic the wallpapers on device enrollment would be a better fit in these scenarios. 
 
 ### Terms of Use
 
