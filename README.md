@@ -1,3 +1,5 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Jamf-Concepts/wallpaper-designer?display_name=tag) ![GitHub all releases](https://img.shields.io/github/downloads/Jamf-Concepts/wallpaper-designer/total)  ![GitHub latest release](https://img.shields.io/github/downloads/Jamf-Concepts/wallpaper-designer/latest/total)
+
 # Wallpaper Designer for Jamf Pro
 
 ## Introduction
