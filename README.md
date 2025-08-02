@@ -1,10 +1,13 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Jamf-Concepts/wallpaper-designer?display_name=tag) ![GitHub all releases](https://img.shields.io/github/downloads/Jamf-Concepts/wallpaper-designer/total)  ![GitHub latest release](https://img.shields.io/github/downloads/Jamf-Concepts/wallpaper-designer/latest/total)
+
+
 # Wallpaper Designer for Jamf Pro
 
 ## Introduction
 
 Wallpaper Designer is a macOS app helps you set customized background images on the iOS and iPadOS devices you manage with Jamf Pro. You can overlay custom text and/or a QR Code for each device. 
 
-The Wallpaper application is available for download [here](https://github.com/Jamf-Concepts/wallpaper/releases/latest/download/Wallpaper.zip).
+The Wallpaper application is available for download [here](https://github.com/Jamf-Concepts/wallpaper-designer/releases/latest/download/Wallpaper.zip).
 
 ![](images/main-screen.png)
 
@@ -54,12 +57,24 @@ We'd love to hear from you about how we can make the app better. If you have tho
 
 ### Permissions
 
-The Wallpaper Designer app requires a login for Jamf Pro. Check that your user has at least these permissions: 
+The Wallpaper Designer app requires a login for Jamf Pro. When logging in with a username/password check that your user has at least these permissions: 
 
 | Section                  | Permissions                           |
 |--------------------------|---------------------------------------|
 | Jamf Pro Server Objects  | Mobile Devices: Create, Read, Update  |
 | Jamf Pro Server Actions  | Send Mobile Device Set Wallpaper Command |
+
+<br>
+
+If using an API client/secret:
+- Create Mobile Devices
+- Read Mobile Devices
+- Update Mobile Devices
+- Read Buildings
+- Read Departments
+- Read Sites
+- Send Mobile Device Set Wallpaper Command
+<br><br>
 
 ### Optional – Noting wallpaper deployment in an extension attribute
 
@@ -77,9 +92,10 @@ In the Jamf Pro console, go to Settings --> Device Management --> Extension Attr
 
 ## Startup
 
-When you launch the program, you will be prompted to login to your Jamf Pro Server. If you save your login information to the your macOS user keychain it will be filled in for you any time you run the program. 
+When you launch the program, you may be prompted to login to your Jamf Pro Server. If you save your login information to the your macOS user keychain it will be filled in for you any time you run the program. 
 
 ![Login Screen](./images/login.png "Login Screen")
+
 
 
 ## The Preview area
@@ -101,7 +117,11 @@ To the right of the preview area, there are some options for setting overlay con
 
 You may add text and/or a QR code to the wallpaper and then position them on the screen by moving them within the preview area. 
 
-A dropdown lets you decide what information you want in the QR code to suit your needs. Serial number is a commonly-used value. 
+A dropdown lets you decide what information you want in the QR code to suit your needs. The QR code can resolve to:
+-  the serial number of the device
+- the URL to the device in Jamf Pro
+- some custom text (variables are not supported). 
+<br><br>
 
 The dynamic text area can be formatted using the formatting dropdown…
 
@@ -115,6 +135,9 @@ The following variables are supported within the text field. These will be repla
 - $asset_tag
 - $buildingname
 - $departmentname
+- $room
+- $realname
+- $email_address
 
 In Jamf Pro, device name, serial number, and often site are populated automatically when a device enrolls. You can populate other values individually in device records, via mass action, or by uploading spreadsheets via [Inventory Preload](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Inventory_Preload.html) or the [MUT utility](https://marketplace.jamf.com/details/the-mut). 
 
