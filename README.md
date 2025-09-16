@@ -59,10 +59,11 @@ We'd love to hear from you about how we can make the app better. If you have tho
 
 The Wallpaper Designer app requires a login for Jamf Pro. When logging in with a username/password check that your user has at least these permissions: 
 
-| Section                  | Permissions                           |
-|--------------------------|---------------------------------------|
-| Jamf Pro Server Objects  | Mobile Devices: Create, Read, Update  |
-| Jamf Pro Server Actions  | Send Mobile Device Set Wallpaper Command |
+| Section                   | Permissions                           |
+|---------------------------|---------------------------------------|
+| Jamf Pro Server Objects   | Mobile Devices: Create, Read, Update  |
+| Jamf Pro Server Settings  | Cloud Services Connection: Read |
+| Jamf Pro Server Actions   | Send Mobile Device Set Wallpaper Command |
 
 <br>
 
@@ -73,6 +74,7 @@ If using an API client/secret:
 - Read Buildings
 - Read Departments
 - Read Sites
+- Read Cloud Services Settings
 - Send Mobile Device Set Wallpaper Command
 <br><br>
 
