@@ -7,8 +7,6 @@
 
 Wallpaper Designer is a macOS app helps you set customized background images on the iOS and iPadOS devices you manage with Jamf Pro. You can overlay custom text and/or a QR Code for each device. 
 
-Starting with version 1.6.0 the application will submit basic hardware, OS, and Wallpaper Designer application usage to [TelemetryDeck](https://telemetrydeck.com). The data is sent anamously and used to aid in the development of the application. To opt out of data the sending of data click 'Opt out of analytics' at the bottom of the 'About Wallpaper' window.
-
 The Wallpaper application is available for download [here](https://github.com/Jamf-Concepts/wallpaper-designer/releases/latest/download/Wallpaper.zip).
 
 ![](images/main-screen.png)
@@ -64,7 +62,9 @@ The Wallpaper Designer app requires a login for Jamf Pro. When logging in with a
 | Section                   | Permissions                           |
 |---------------------------|---------------------------------------|
 | Jamf Pro Server Objects   | Mobile Devices: Create, Read, Update  |
-| Jamf Pro Server Settings  | Cloud Services Connection: Read |
+| Jamf Pro Server Objects   | Smart Mobile Device Groups: Read     |
+| Jamf Pro Server Objects   | Static Mobile Device Groups: Read     |
+| Jamf Pro Server Settings  | Cloud Services Connection: Read       |
 | Jamf Pro Server Actions   | Send Mobile Device Set Wallpaper Command |
 
 <br>
@@ -73,6 +73,8 @@ If using an API client/secret:
 - Create Mobile Devices
 - Read Mobile Devices
 - Update Mobile Devices
+- Read Smart Mobile Device Groups
+- Read Static Mobile Device Groups
 - Read Buildings
 - Read Departments
 - Read Sites
