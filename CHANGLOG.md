@@ -1,5 +1,20 @@
 # 📜 Version History
 
+## [1.7.1] - 26-06-19
+### Fixed
+- Fix crash caused encountering unexpected font values. 
+### Added
+- Better handling of large images (>3MB).
+- Notification when image is resized during deployment.
+
+## [1.7.0] - 26-06-15
+### Fixed
+- Token renewal and refresh handling.
+- Handling of faulty device records.
+- Deployment counter and sheet dismissal issues.
+### Added
+- JSSID QR code type option.
+
 ## [1.6.3] - 25-06-08
 ### Fixed
 - Resolve issue (#8), decode error preventing wallpaper deployment.
