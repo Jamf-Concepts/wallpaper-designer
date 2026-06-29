@@ -1,5 +1,9 @@
 # 📜 Version History
 
+## [1.7.2] - 26-06-29
+### Fixed
+- Prevent random crashes. 
+
 ## [1.7.1] - 26-06-19
 ### Fixed
 - Fix crash caused encountering unexpected font values. 
