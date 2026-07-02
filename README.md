@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Wallpaper Designer is a macOS app helps you set customized background images on the iOS and iPadOS devices you manage with Jamf Pro. You can overlay custom text and/or a QR Code for each device. 
+Wallpaper Designer is a macOS app that helps you set customized background images on the iOS and iPadOS devices you manage with Jamf Pro. You can overlay custom text and/or a QR Code for each device. 
 
 The Wallpaper application is available for download [here](https://github.com/Jamf-Concepts/wallpaper-designer/releases/latest/download/Wallpaper.zip).
 
@@ -40,7 +40,7 @@ These capabilities will satisfy most needs, but they won't be of much help if yo
 
 ### Limitations
 
-You should be aware that wallpaper images are stored in Jamf Pro's database. We've seen customers set wallpaper on many thousands of devices without issue, but don't start off by sending out a customized wallpaper to 100,000 devices at once. It would better to start with a test group, evaluate results, then ramp up from there. You can minimize database size by sending images with a resolution that gives a nice result but doesn't far exceded what the device can actually display. Image processing for a large fleet will take some time and deploying the images will consume server resources. If you have many thousands of devices, talk to us about solutions that will make better sense in your environment. The Wallpaper app is also not a solution if you have a workflow that resets devices between users as wallpapers set by this utility won't automatically come back. Smart group actions and our solutions for setting dynamic the wallpapers on device enrollment would be a better fit in these scenarios. 
+You should be aware that wallpaper images are stored in Jamf Pro's database. We've seen customers set wallpaper on many thousands of devices without issue, but don't start off by sending out a customized wallpaper to 100,000 devices at once. It would better to start with a test group, evaluate results, then ramp up from there. You can minimize database size by sending images with a resolution that gives a nice result but doesn't far exceed what the device can actually display. Image processing for a large fleet will take some time and deploying the images will consume server resources. If you have many thousands of devices, talk to us about solutions that will make better sense in your environment. The Wallpaper app is also not a solution if you have a workflow that resets devices between users as wallpapers set by this utility won't automatically come back. Smart group actions and our solutions for setting dynamic wallpapers on device enrollment would be a better fit in these scenarios. 
 
 ### Terms of Use
 
@@ -144,6 +144,7 @@ The following variables are supported within the text field. These will be repla
 - $room
 - $realname
 - $email_address
+- $jssid
 
 In Jamf Pro, device name, serial number, and often site are populated automatically when a device enrolls. You can populate other values individually in device records, via mass action, or by uploading spreadsheets via [Inventory Preload](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Inventory_Preload.html) or the [MUT utility](https://marketplace.jamf.com/details/the-mut). 
 
