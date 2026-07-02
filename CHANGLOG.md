@@ -1,5 +1,9 @@
 # 📜 Version History
 
+## [1.7.3] - 26-07-02
+### Updated
+- Misc. code cleanup 
+
 ## [1.7.2] - 26-06-29
 ### Fixed
 - Prevent random crashes. 
